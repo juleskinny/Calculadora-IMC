@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="/estilo/style.css">
+</head>
+<body>
+   <main>
+        <h1>Calculadora de IMC</h1>
+        <div class="painel-input">
+            <div class="label-inputs">
+                <label for="altura">Altura ex(1,70)</label>
+                <input type="number" placeholder="Metros" id="altura" step="0.01">
+            </div>
+
+            <div class="label-inputs">
+                <label for="peso">Peso ex(54,4)</label>
+                <input type="number" placeholder="Quilos" id="peso" step="0.1" >
+            </div>
+
+            <div class="box-radio">
+                <div class="radio-label">
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" name="sexo" id="feminino" value="feminino">
+                </div>
+
+                <div class="radio-label">
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" name="sexo" id="masculino" value="masculino">
+                </div>
+            </div>
+
+            <button type="submit" id="button">Enviar</button>
+        </div>
+
+        <div class="painel-resultado">
+            <p id="resultado-Imc"></p>
+            <img src="" alt="" id="imgImc">
+            <p id="imc-classe"></p>
+        </div>
+
+   </main>
+
+   
+
+   <script src="/script/script.js"></script>
+</body>
+</html>
