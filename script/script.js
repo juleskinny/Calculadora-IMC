@@ -38,23 +38,23 @@ function getImgGender(classificacao, siglaGenero) {
 
     switch (classificacao) {
         case 'MAGREZA' :
-            return `assets/silhueta-${siglaGenero}-abaixo-do-peso.png`
+            return `./assets/silhueta-${siglaGenero}-abaixo-do-peso.png`
             break;
 
         case 'NORMAL':
-             return `assets/silhueta-${siglaGenero}-peso-ideal.png`
+             return `./assets/silhueta-${siglaGenero}-peso-ideal.png`
              break
         
         case 'SOBREPESO':
-             return `assets/silhueta-${siglaGenero}-acima-do-peso.png`
+             return `./assets/silhueta-${siglaGenero}-acima-do-peso.png`
             break
         
         case 'OBESIDADE':
-            return `assets/silhueta-${siglaGenero}-obesidade.png`
+            return `./assets/silhueta-${siglaGenero}-obesidade.png`
             break
         
         case 'OBESIDADE GRAVE':
-           return `assets/silhueta-${siglaGenero}-obesidade-morbida.png`
+           return `./assets/silhueta-${siglaGenero}-obesidade-morbida.png`
     
         default:
             break;
