@@ -1,5 +1,23 @@
-const peso = document.querySelector('#peso')
-const altura = document.querySelector('#altura')
+const pesoInput = document.querySelector('#peso')
+const alturaInput = document.querySelector('#altura')
+alturaInput.addEventListener('input', () => {
+    let valor = alturaInput.value.replace(/\D/g, '') // remove tudo que não é numero
+
+    if(valor.length >=2) {
+        valor = valor.slice(0, 1) + ',' + valor.slice(1)
+    }
+
+    alturaInput.value = valor 
+})
+
+pesoInput.addEventListener('input', () => {
+    let valor = pesoInput.value.replace(/\D/g, '')
+    pesoInput.value = valor
+})
+
+let peso
+let altura 
+
 const button = document.querySelector('#button')
 const optionF = document.querySelector('#feminino')
 const optionM = document.querySelector('#masculino')
@@ -63,7 +81,9 @@ function getImgGender(classificacao, siglaGenero) {
 
 button.addEventListener('click', () => {
     try {
-        if(!peso.value || !altura.value || !optionF.checked && !optionM.checked) {
+        peso = Number(pesoInput.value.replaceAll(' ', ''))
+        altura = Number(alturaInput.value.replace(',', '.'))
+        if(!peso || !altura || !(optionF.checked || optionM.checked)) {
             throw new Error('Preencha todos os campos')
         } 
 
@@ -78,10 +98,11 @@ button.addEventListener('click', () => {
         return
     }
 
-    let calculoImc = peso.value / (altura.value * altura.value) // calculo de imc
+    let calculoImc = peso / (altura * altura) // calculo de imc
 
     resultadoImc.innerText = `IMC: ${calculoImc.toFixed(2)}`
-    imcClasse.innerText = classificacaoImc(calculoImc)
+    const resultadoClasse = classificacaoImc(calculoImc)
+    imcClasse.innerText = resultadoClasse
     
     let optionGender
 
@@ -91,7 +112,7 @@ button.addEventListener('click', () => {
         optionGender = 'F'
     }
 
-    imgImc.src = getImgGender(classificacaoImc(calculoImc), optionGender)
+    imgImc.src = getImgGender(resultadoClasse, optionGender)
 })
 
 

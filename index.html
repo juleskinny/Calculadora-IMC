@@ -12,23 +12,23 @@
         <div class="painel-input">
             <div class="label-inputs">
                 <label for="altura">Altura ex(1,70)</label>
-                <input type="number" placeholder="Metros" id="altura" step="0.01">
+                <input type="text" placeholder="Metros" id="altura" maxlength="4" required inputmode="decimal" >
             </div>
 
             <div class="label-inputs">
                 <label for="peso">Peso ex(54,4)</label>
-                <input type="number" placeholder="Quilos" id="peso" step="0.1" >
+                <input type="text" placeholder="Quilos" id="peso" maxlength="3" required>
             </div>
 
             <div class="box-radio">
                 <div class="radio-label">
                     <label for="feminino">Feminino</label>
-                    <input type="radio" name="sexo" id="feminino" value="feminino">
+                    <input type="radio" name="sexo" id="feminino" value="feminino" required inputmode="numeric">
                 </div>
 
                 <div class="radio-label">
                     <label for="masculino">Masculino</label>
-                    <input type="radio" name="sexo" id="masculino" value="masculino">
+                    <input type="radio" name="sexo" id="masculino" value="masculino" required>
                 </div>
             </div>
 

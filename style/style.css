@@ -114,8 +114,6 @@ input {
     width: clamp(150px, 90%, 250px);
     min-height: 0;
     padding: 12px;
-    /*border: 1px solid black;*/
-    font-size: 1rem;
     overflow: auto;
 }
 
